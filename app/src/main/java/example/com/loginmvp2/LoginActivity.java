@@ -1,5 +1,6 @@
 package example.com.loginmvp2;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,5 +26,11 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
 
     public void enviarDatos(View view) {
         this.loginPresenter.validarEmail(this.mEmail.getText().toString());
+    }
+
+    @Override
+    public void navigateToHome() {
+        Intent i = new Intent(this, HomeActivity.class);
+        startActivity(i);
     }
 }

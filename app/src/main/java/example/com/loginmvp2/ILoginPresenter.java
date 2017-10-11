@@ -7,6 +7,5 @@ import android.content.Context;
  */
 
 public interface ILoginPresenter {
-    void showErrorEmail();
     void validarEmail(String email);
 }

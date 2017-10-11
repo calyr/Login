@@ -10,4 +10,6 @@ public interface LoginView {
 
     void showError(String error);
     void enviarDatos(View view);
+
+    void navigateToHome();
 }

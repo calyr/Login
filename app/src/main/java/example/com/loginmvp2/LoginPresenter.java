@@ -1,6 +1,7 @@
 package example.com.loginmvp2;
 
 import android.content.Context;
+import android.text.TextUtils;
 
 /**
  * Created by robertocarloscallisaya on 10/11/17.
@@ -18,11 +19,12 @@ public class LoginPresenter implements ILoginPresenter {
 
     @Override
     public void validarEmail(String email) {
-        this.loginView.showError("Este campo es invalido");
+
+        if (TextUtils.isEmpty(email)) {
+            this.loginView.showError("Este campo no puede estar vacio");
+        } else {
+            this.loginView.navigateToHome();
+        }
     }
 
-    @Override
-    public void showErrorEmail() {
-
-    }
 }
